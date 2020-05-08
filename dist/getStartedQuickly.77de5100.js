@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/gsap/TweenLite.js":[function(require,module,exports) {
+})({"../../node_modules/gsap/TweenLite.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -2677,7 +2677,7 @@ var TweenPlugin = globals.TweenPlugin;
 exports.TweenPlugin = TweenPlugin;
 var EventDispatcher = nonGlobals.events.EventDispatcher;
 exports.EventDispatcher = EventDispatcher;
-},{}],"../node_modules/gsap/TimelineLite.js":[function(require,module,exports) {
+},{}],"../../node_modules/gsap/TimelineLite.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3739,7 +3739,7 @@ _TweenLite._gsScope._gsDefine("TimelineLite", ["core.Animation", "core.SimpleTim
 
 var TimelineLite = _TweenLite.globals.TimelineLite;
 exports.default = exports.TimelineLite = TimelineLite;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/TimelineMax.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/TimelineMax.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4402,7 +4402,7 @@ _TweenLite._gsScope._gsDefine("TimelineMax", ["TimelineLite", "TweenLite", "easi
 
 var TimelineMax = _TweenLite.globals.TimelineMax;
 exports.default = exports.TimelineMax = TimelineMax;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js"}],"../node_modules/gsap/TweenMaxBase.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js"}],"../../node_modules/gsap/TweenMaxBase.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5298,7 +5298,7 @@ var TweenMax = _TweenLite.globals.TweenMax;
 exports.default = exports.TweenMax = TweenMax;
 var TweenMaxBase = TweenMax;
 exports.TweenMaxBase = TweenMaxBase;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/CSSPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/CSSPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9084,7 +9084,7 @@ _TweenLite._gsScope._gsDefine("plugins.CSSPlugin", ["plugins.TweenPlugin", "Twee
 
 var CSSPlugin = _TweenLite.globals.CSSPlugin;
 exports.default = exports.CSSPlugin = CSSPlugin;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/AttrPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/AttrPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9136,7 +9136,7 @@ var AttrPlugin = _TweenLite._gsScope._gsDefine.plugin({
 });
 
 exports.default = exports.AttrPlugin = AttrPlugin;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/RoundPropsPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/RoundPropsPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9252,7 +9252,7 @@ p._add = function (target, p, s, c, mod) {
 
   this._overwriteProps.push(p);
 };
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/DirectionalRotationPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/DirectionalRotationPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9352,7 +9352,7 @@ var DirectionalRotationPlugin = _TweenLite._gsScope._gsDefine.plugin({
 
 exports.default = exports.DirectionalRotationPlugin = DirectionalRotationPlugin;
 DirectionalRotationPlugin._autoCSS = true;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/BezierPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/BezierPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10153,7 +10153,7 @@ p._kill = function (lookup) {
 
   return this._super._kill.call(this, lookup);
 };
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/EasePack.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/EasePack.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10599,7 +10599,7 @@ var Sine = _TweenLite.globals.Sine;
 exports.Sine = Sine;
 var ExpoScaleEase = _TweenLite.globals.ExpoScaleEase;
 exports.ExpoScaleEase = ExpoScaleEase;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/TweenMax.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/TweenMax.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10806,7 +10806,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var TweenMax = _TweenMaxBase.default;
 exports.default = exports.TweenMax = TweenMax;
 TweenMax._autoActivated = [_TimelineLite.default, _TimelineMax.default, _CSSPlugin.default, _AttrPlugin.default, _BezierPlugin.default, _RoundPropsPlugin.default, _DirectionalRotationPlugin.default, _EasePack.Back, _EasePack.Elastic, _EasePack.Bounce, _EasePack.RoughEase, _EasePack.SlowMo, _EasePack.SteppedEase, _EasePack.Circ, _EasePack.Expo, _EasePack.Sine, _EasePack.ExpoScaleEase];
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TweenMaxBase.js":"../node_modules/gsap/TweenMaxBase.js","./CSSPlugin.js":"../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../node_modules/gsap/DirectionalRotationPlugin.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../node_modules/gsap/TimelineMax.js","./BezierPlugin.js":"../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../node_modules/gsap/EasePack.js"}],"../node_modules/gsap/index.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TweenMaxBase.js":"../../node_modules/gsap/TweenMaxBase.js","./CSSPlugin.js":"../../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../../node_modules/gsap/DirectionalRotationPlugin.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../../node_modules/gsap/TimelineMax.js","./BezierPlugin.js":"../../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../../node_modules/gsap/EasePack.js"}],"../../node_modules/gsap/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11012,7 +11012,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../node_modules/gsap/EasePack.js"}],"index.ts":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../../node_modules/gsap/EasePack.js"}],"index.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11092,7 +11092,7 @@ function showAlert() {
   //alert("All done!")
   console.log("all complete...");
 }
-},{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"gsap":"../../node_modules/gsap/index.js"}],"../../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11120,7 +11120,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42515" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39811" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -11296,5 +11296,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel/src/builtins/hmr-runtime.js","index.ts"], null)
-//# sourceMappingURL=/src.77de5100.js.map
+},{}]},{},["../../node_modules/parcel/src/builtins/hmr-runtime.js","index.ts"], null)
+//# sourceMappingURL=/getStartedQuickly.77de5100.js.map

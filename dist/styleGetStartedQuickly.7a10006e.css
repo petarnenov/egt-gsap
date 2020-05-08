@@ -2,7 +2,7 @@ body {
   background: tomato;
 }
 
-h1 {
+h1,h2 {
   text-align: center;
 }
 
@@ -53,3 +53,6 @@ h1 {
     background:linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,121,89,0.8811188811188811) 68%, rgba(0,212,255,1) 100%);
     border-radius: 10px;
   }
+
+
+/*# sourceMappingURL=/styleGetStartedQuickly.7a10006e.css.map */

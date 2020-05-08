@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/gsap/TweenLite.js":[function(require,module,exports) {
+})({"../../node_modules/gsap/TweenLite.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -2677,7 +2677,7 @@ var TweenPlugin = globals.TweenPlugin;
 exports.TweenPlugin = TweenPlugin;
 var EventDispatcher = nonGlobals.events.EventDispatcher;
 exports.EventDispatcher = EventDispatcher;
-},{}],"../node_modules/gsap/TimelineLite.js":[function(require,module,exports) {
+},{}],"../../node_modules/gsap/TimelineLite.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3739,7 +3739,7 @@ _TweenLite._gsScope._gsDefine("TimelineLite", ["core.Animation", "core.SimpleTim
 
 var TimelineLite = _TweenLite.globals.TimelineLite;
 exports.default = exports.TimelineLite = TimelineLite;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/TimelineMax.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/TimelineMax.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4402,7 +4402,7 @@ _TweenLite._gsScope._gsDefine("TimelineMax", ["TimelineLite", "TweenLite", "easi
 
 var TimelineMax = _TweenLite.globals.TimelineMax;
 exports.default = exports.TimelineMax = TimelineMax;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js"}],"../node_modules/gsap/TweenMaxBase.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js"}],"../../node_modules/gsap/TweenMaxBase.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5298,7 +5298,7 @@ var TweenMax = _TweenLite.globals.TweenMax;
 exports.default = exports.TweenMax = TweenMax;
 var TweenMaxBase = TweenMax;
 exports.TweenMaxBase = TweenMaxBase;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/CSSPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/CSSPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9084,7 +9084,7 @@ _TweenLite._gsScope._gsDefine("plugins.CSSPlugin", ["plugins.TweenPlugin", "Twee
 
 var CSSPlugin = _TweenLite.globals.CSSPlugin;
 exports.default = exports.CSSPlugin = CSSPlugin;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/AttrPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/AttrPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9136,7 +9136,7 @@ var AttrPlugin = _TweenLite._gsScope._gsDefine.plugin({
 });
 
 exports.default = exports.AttrPlugin = AttrPlugin;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/RoundPropsPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/RoundPropsPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9252,7 +9252,7 @@ p._add = function (target, p, s, c, mod) {
 
   this._overwriteProps.push(p);
 };
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/DirectionalRotationPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/DirectionalRotationPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9352,7 +9352,7 @@ var DirectionalRotationPlugin = _TweenLite._gsScope._gsDefine.plugin({
 
 exports.default = exports.DirectionalRotationPlugin = DirectionalRotationPlugin;
 DirectionalRotationPlugin._autoCSS = true;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/BezierPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/BezierPlugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10153,7 +10153,7 @@ p._kill = function (lookup) {
 
   return this._super._kill.call(this, lookup);
 };
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/EasePack.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/EasePack.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10599,7 +10599,7 @@ var Sine = _TweenLite.globals.Sine;
 exports.Sine = Sine;
 var ExpoScaleEase = _TweenLite.globals.ExpoScaleEase;
 exports.ExpoScaleEase = ExpoScaleEase;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/TweenMax.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js"}],"../../node_modules/gsap/TweenMax.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10806,7 +10806,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var TweenMax = _TweenMaxBase.default;
 exports.default = exports.TweenMax = TweenMax;
 TweenMax._autoActivated = [_TimelineLite.default, _TimelineMax.default, _CSSPlugin.default, _AttrPlugin.default, _BezierPlugin.default, _RoundPropsPlugin.default, _DirectionalRotationPlugin.default, _EasePack.Back, _EasePack.Elastic, _EasePack.Bounce, _EasePack.RoughEase, _EasePack.SlowMo, _EasePack.SteppedEase, _EasePack.Circ, _EasePack.Expo, _EasePack.Sine, _EasePack.ExpoScaleEase];
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TweenMaxBase.js":"../node_modules/gsap/TweenMaxBase.js","./CSSPlugin.js":"../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../node_modules/gsap/DirectionalRotationPlugin.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../node_modules/gsap/TimelineMax.js","./BezierPlugin.js":"../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../node_modules/gsap/EasePack.js"}],"../node_modules/gsap/index.js":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TweenMaxBase.js":"../../node_modules/gsap/TweenMaxBase.js","./CSSPlugin.js":"../../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../../node_modules/gsap/DirectionalRotationPlugin.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../../node_modules/gsap/TimelineMax.js","./BezierPlugin.js":"../../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../../node_modules/gsap/EasePack.js"}],"../../node_modules/gsap/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11012,87 +11012,232 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../node_modules/gsap/EasePack.js"}],"index.ts":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../../node_modules/gsap/EasePack.js"}],"index.ts":[function(require,module,exports) {
 "use strict";
+
+var _a;
 
 Object.defineProperty(exports, "__esModule", {
   value: true
-}); //following this tutorial
-//https://www.youtube.com/watch?v=tMP1PCErrmE
-
-var gsap_1 = require("gsap"); //animate h1
-
-
-var tweenHeader1 = gsap_1.TweenMax.from("h1", 2, {
-  opacity: 0,
-  color: "gray"
-}); //units in "40%"
-
-var tweenFirst = gsap_1.TweenMax.to(".first", 5, {
-  left: 0,
-  backgroundColor: "#aaa",
-  padding: 20,
-  border: "2px solid 'black'",
-  borderRadius: 30,
-  rotation: 360,
-  scale: 0.7
 });
-var tweenSecond = gsap_1.TweenMax.to(".second", 3, {
-  left: 0,
-  ease: gsap_1.Back.easeInOut
+
+var gsap_1 = require("gsap");
+
+var logoFirst = gsap_1.TweenLite.to(".first", 4, {
+  x: window.innerWidth - 300,
+  backgroundColor: "#777",
+  border: "1px solid white",
+  borderRadius: "20%",
+  ease: gsap_1.Back.easeOut
 });
-var tweenThird = gsap_1.TweenMax.to(".third", 3, {
-  left: 0,
-  ease: gsap_1.Elastic.easeInOut
-});
-var tweenForth = gsap_1.TweenMax.from(".forth", 3, {
-  left: 0,
-  ease: gsap_1.Bounce.easeInOut
-});
-var tweenFifth = gsap_1.TweenMax.from(".fifth", 0.5, {
-  scale: 0,
-  opacity: 0,
+var logoSecond = gsap_1.TweenLite.to(".second", 4, {
+  x: window.innerWidth - 300,
+  backgroundColor: "#777",
+  border: "1px solid white",
+  borderRadius: "20%",
   ease: gsap_1.Bounce.easeOut
 });
-var tweenBox = gsap_1.TweenMax.from(".box", 0.5, {
-  opacity: 0,
-  y: 200,
-  delay: 1
+var logoThird = gsap_1.TweenLite.to(".third", 4, {
+  x: window.innerWidth - 300,
+  backgroundColor: "#777",
+  border: "1px solid white",
+  borderRadius: "20%",
+  ease: gsap_1.Elastic.easeOut
 });
-var tweenBoxSecond = gsap_1.TweenMax.staggerFrom(".boxSecond", 0.5, {
-  opacity: 0,
-  y: function y() {
-    return Math.random() * 300;
-  },
-  rotation: 1080
-}, 0.25);
-var tweenFadeout = gsap_1.TweenMax.to(".box,.boxSecond", 1, {
-  opacity: 0,
-  delay: 2,
-  onComplete: showAlert
+var logoForth = gsap_1.TweenLite.to(".forth", 6, {
+  x: window.innerWidth - 300,
+  backgroundColor: "#777",
+  border: "1px solid white",
+  borderRadius: "20%",
+  ease: gsap_1.Expo.easeOut,
+  onComplete: logoForthComplete,
+  onCompleteParams: ["forth done!!!", Date.now()]
+}); //callbacks with parameters
+
+function logoForthComplete(message, endTime) {
+  console.log(endTime); //const date = (new Date(0)).setUTCMilliseconds(+endTime)
+
+  var date = new Date(0);
+  date.setUTCMilliseconds(endTime);
+  console.log("Status: " + message + ", startAt: " + date.toLocaleString() + ", finishedAt: " + new Date().toLocaleString());
+}
+
+var myObject = {
+  rotation: 0
+}; //const fifth = document.querySelector(".fifth") as DivGsap;
+//fifth.rotation=0;
+// console.log(fifth);
+
+var logoFifth = gsap_1.TweenLite.to([".fifth", myObject], 2, {
+  x: 200,
+  rotation: 720,
+  transformOrigin: "10% 10%",
+  onUpdate: function onUpdate() {
+    console.log(myObject.rotation);
+  }
 });
-var t1 = new gsap_1.TimelineMax({
-  onUpdate: updateSlider
-});
-t1.to("h1", 2, {
+var logoSixth = gsap_1.TweenLite.from(".sixth", 3, {
   opacity: 0,
-  ease: gsap_1.Back.easeOut,
-  delay: 1,
-  repeat: 3
-}).to(".box", 2, {
+  scale: 0.3,
+  ease: gsap_1.Back.easeOut
+}); // const logoStagger = TweenMax.staggerTo(".stagger", 2, { x: 300 }, 2);
+//using function to generate random values
+
+var logoStagger = gsap_1.TweenMax.staggerFrom(".stagger", 2, {
+  yoyo: true,
+  repeat: -1,
+  opacity: 0,
+  x: function x() {
+    return Math.random() * 500 - 250;
+  }
+}, 2);
+var names = ["play", "pause", "resume", "reverse", "seek", "timeScale", "kill"];
+names.forEach(function (name) {
+  var button = document.querySelector("#btn-" + name);
+  button.addEventListener("click", function (e) {
+    logoStagger.forEach(function (tween) {
+      if (name !== "kill") {
+        tween[name](0.5);
+      } else {
+        //tween[name].call(tween);
+        //TweenMax.killTweensOf(tween);
+        //TweenMax.killAll();
+        tween.kill();
+        document.querySelectorAll(".stagger").forEach(function (e) {
+          e.remove();
+        });
+        console.log("press kill");
+      }
+    });
+  });
+}); // function start(this: Tween) {
+//   this.play();
+// }
+// function stop(this: Tween) {
+//   this.pause();
+// }
+// function reverse(this: Tween) {
+//   this.reverse();
+// }
+// const btnStart = document.querySelector("#btn-start") as HTMLButtonElement;
+// const btnStop = document.querySelector("#btn-stop") as HTMLButtonElement;
+// const btnReverse = document.querySelector("#btn-reverse") as HTMLButtonElement;
+// btnStart.addEventListener("click", () => {
+//   (logoStagger as Tween[]).forEach((t) => {
+//     start.call(t);
+//   });
+// });
+// btnStop.addEventListener("click", () => {
+//   (logoStagger as Tween[]).forEach((t) => {
+//     stop.call(t);
+//   });
+// });
+// btnReverse.addEventListener("click", () => {
+//   (logoStagger as Tween[]).forEach((t) => {
+//     reverse.call(t);
+//   });
+// });
+//TimelineLite has no follow properties: repeat, yoyo, ...
+
+var timeLine = new gsap_1.TimelineLite({
+  onComplete: function onComplete() {
+    //fake repeating
+    //if label missing , return -1 as position
+    // console.log(timeLine.getLabelTime("undefined1"));
+    // console.log(timeLine.getLabelTime("undefined2"));
+    console.log(timeLine.getLabelTime("begin"));
+    console.log(timeLine.getLabelTime("one"));
+    console.log(timeLine.getLabelTime("two"));
+    console.log(timeLine.getLabelTime("end")); //console.log(timeLine.recent());
+    //remove label "begin" and tween associate to it from TimelineLite
+
+    var children = timeLine.getChildren(false, true, false);
+    var labelTime = timeLine.getLabelTime("begin");
+    children.forEach(function (c) {
+      if (c.startTime() === labelTime) {
+        timeLine.remove(c);
+      }
+    });
+    console.log(children);
+    timeLine.remove("begin");
+    timeLine.play("begin");
+  }
+}); //timeLine.addLabel("begin", 0);
+
+timeLine.to("#tl1", 1, {
+  x: 300,
+  backgroundColor: "0x00ff00"
+}, "begin") //.addLabel("one", 1)
+.to("#tl2", 1, {
+  x: 300
+}, "one") //.addLabel("two", 2)
+.to("#tl1", 0.25, {
+  rotation: 1080,
+  scale: "+=0.3"
+}, "two").to("#tl1", 1, {
+  x: 600,
+  ease: gsap_1.Back.easeOut
+}).addLabel("end", "+=0"); // setTimeout(() => {
+//   timeLine.play("one");
+// }, 5000);
+
+setTimeout(function () {
+  timeLine.pause();
+}, 10000);
+var logoGrey = gsap_1.TweenLite.to(".gray", 4, {
+  x: 600,
+  y: -200,
+  scale: 2,
+  skewX: 30,
+  rotation: 360,
+  skewY: 30,
+  opacity: 0.3
+});
+var title = gsap_1.TweenLite.from("#title", 2, {
+  x: -window.innerWidth / 2,
   scale: 0.5,
-  opacity: 1
-});
+  opacity: 0.3,
+  ease: gsap_1.Bounce.easeOut,
+  color: "0x555555"
+}); //##############################################################################
+//create boxes
 
-function updateSlider() {
-  console.log(t1.progress()); //t1.pause(0.99);
+var table = document.createElement("table");
+var tbody = document.createElement("tbody");
+
+for (var i = 0; i < 5; i++) {
+  var row = document.createElement("tr");
+
+  for (var j = 0; j < 13; j++) {
+    var data = document.createElement("td");
+    data.innerHTML = "<div class='box'></div>";
+    row.appendChild(data);
+  }
+
+  tbody.appendChild(row);
 }
 
-function showAlert() {
-  //alert("All done!")
-  console.log("all complete...");
-}
-},{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+table.appendChild(tbody);
+(_a = document.querySelector("#main")) === null || _a === void 0 ? void 0 : _a.appendChild(table); //##############################################################################
+//v2.x.x has no stagger object like in example https://greensock.com/get-started/
+//insert custom data into tweens, use latter tween.vars.data...
+
+var myData = {
+  createdAt: Date.now()
+};
+var boxes = gsap_1.TweenMax.staggerTo(".box", 1, {
+  data: myData,
+  scale: 0.1,
+  yoyo: true,
+  repeat: -1,
+  y: 10,
+  ease: gsap_1.Power1.easeInOut,
+  delay: 1
+}, 0.01); //alert(JSON.stringify(boxes[0].vars.data));
+//TODO: Getter/Setter methods
+//TODO: Getting current values of element's property
+//TODO: Plugins
+},{"gsap":"../../node_modules/gsap/index.js"}],"../../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11120,7 +11265,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42515" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39657" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -11296,5 +11441,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel/src/builtins/hmr-runtime.js","index.ts"], null)
-//# sourceMappingURL=/src.77de5100.js.map
+},{}]},{},["../../node_modules/parcel/src/builtins/hmr-runtime.js","index.ts"], null)
+//# sourceMappingURL=/gsapLearning.77de5100.js.map

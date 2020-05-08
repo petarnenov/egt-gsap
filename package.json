@@ -15,7 +15,8 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "start": "parcel src/index.html",
+    "start:getStartedQuickly": "parcel src/getStartedQuickly/index.html",
+    "start:gsapLearning" : "parcel src/gsapLearning/index.html",
     "test": "jest"
   },
   "repository": {
