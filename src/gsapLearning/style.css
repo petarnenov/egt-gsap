@@ -47,10 +47,31 @@ h1 {
   color: tomato;
 }
 
-.box{
+.box {
   margin: 6px;
   position: relative;
   background: coral;
   width: 50px;
   height: 50px;
+}
+
+.rangeSlider {
+  width: 400px;
+  margin: 20px auto;
+}
+
+#hippo,
+#elephant,
+#star {
+  visibility: hidden;
+}
+
+.oldText {
+  color: red;
+}
+.newText {
+  font-size: 72px;
+  color: greenyellow;
+  font-style: italic;
+  font-weight: bold;
 }

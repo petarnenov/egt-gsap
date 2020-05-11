@@ -9,6 +9,9 @@ import {
   TimelineLite,
   SlowMo,
   Power1,
+  TimelineMax,
+  Linear,
+
 } from "gsap";
 import DivGsap from "./DivGsap";
 
@@ -120,7 +123,7 @@ names.forEach((name) => {
         //TweenMax.killAll();
         tween.kill();
         document.querySelectorAll(".stagger").forEach((e) => {
-          e.remove()
+          e.remove();
         });
         console.log("press kill");
       }
@@ -261,6 +264,47 @@ const boxes = TweenMax.staggerTo(
 
 //TODO: Getter/Setter methods
 
+const getter = new TimelineMax({
+  repeat: -1,
+  yoyo: true,
+  onUpdate: function (this: TimelineMax) {
+    //console.log(getter.progress());
+    //console.log(getter.timeScale());
+    //console.log(this.getChildren());
+    const children = this.getChildren();
+    //console.log(children);
+    children.forEach((c) => {
+      console.log((c as Tween).target[0].style["opacity"]);
+      (c as Tween).target[0].style["backgroundColor"];
+      //gsap.getProperty((c as Tween).target[0],"x")
+    });
+  },
+});
+getter
+  .to(".getter", 3, {
+    x: 100,
+    onUpdate: function (this: TweenLite) {
+      console.log("hi");
+    },
+  })
+  .to(".getter", 4, { x: 300, opacity: 0.2 });
+
+console.log(`Time duration: ${getter.duration()}s.`);
+//getter.duration(2);
+
+setInterval(() => {
+  getter.timeScale(Math.random() * 10);
+}, 1000);
+
 //TODO: Getting current values of element's property
+//get target[0].style[<property>]
 
 //TODO: Plugins
+//Morph commercial
+// const slider = document.querySelector("#slider");
+// const sliderTL = new TimelineMax({ onUpdate: updateSlider });
+// sliderTL.to("#circle", 5, { morphSVG: "#hippo" }, "+=1");
+
+function updateSlider() {}
+//Text
+TweenMax.to("#myText",2,{text:{value:"new text",newClass:"newText",oldClass:"oldText",padSpace:false},ease:Linear.easeNone,delay:2});
