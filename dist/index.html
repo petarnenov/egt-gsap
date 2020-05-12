@@ -7,7 +7,7 @@
     <title>PIXI & GreenSock</title>
   <script src="/style.e308ff8e.js"></script></head>
   <body>
-    <div id="loader">
+    <!-- <div id="loader">
       <div class="dot"></div>
       <div class="dot"></div>
       <div class="dot"></div>
@@ -16,8 +16,40 @@
       <div class="dot"></div>
       <div class="dot"></div>
       <div class="dot"></div>
+    </div> -->
+    <div class="perspective">
+      <div id="svg-box">
+        <svg width="80" height="80">
+          <rect width="80" height="80" fill="#993300"></rect>
+          <circle id="svg-circle" cx="40" cy="40" r="35" stroke="green" stroke-width="4" fill="yellow"></circle>
+          <text x="25" y="45">SVG</text>
+        </svg>
+      </div>
+      <div id="css-box">
+        <p>DIV</p>
+        <span class="htmlDOT"></span>
+      </div>
     </div>
+
+    <div>
+      <div class="box">
+        <svg id="box1" width="80" height="80">
+          <rect width="80" height="80" fill="#ff0000"></rect>
+        </svg>
+      </div>
+
+      <div class="box">
+        <svg id="box2" width="80" height="80">
+          <rect width="80" height="80" fill="#ff0000"></rect>
+        </svg>
+      </div>
+
+      <div class="box">
+        <svg id="box3" width="80" height="80">
+          <rect width="80" height="80" fill="#ff0000"></rect>
+        </svg>
+      </div>
     <script src="/PixiPlugin.549f3fa1.js"></script>
     <script lang="ts" src="/gsapPIXI.77de5100.js"></script>
-  </body>
+  </div></body>
 </html>

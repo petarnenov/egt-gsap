@@ -53206,8 +53206,110 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../../node_modules/gsap/EasePack.js"}],"index.ts":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../../node_modules/gsap/EasePack.js"}],"LoaderAnimation.ts":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var gsap_1 = require("gsap");
+
+var LoaderAnimation =
+/** @class */
+function () {
+  function LoaderAnimation(circleNumbers) {
+    this.circleNumbers = circleNumbers;
+    this.loader = document.createElement("div");
+    this.circles = [];
+    this.animationLoading = new gsap_1.TimelineMax({
+      paused: true,
+      repeat: 2,
+      onComplete: this.completeLoading.bind(this)
+    });
+    this.animationDone = new gsap_1.TimelineLite({
+      paused: true
+    });
+    this.loader.id = "loader";
+    this.loader.style.visibility = "hidden";
+
+    for (var i = 0; i < circleNumbers; i++) {
+      var div = document.createElement("div");
+      div.classList.add("dot");
+      this.circles.push(div);
+      this.loader.appendChild(div);
+    }
+
+    document.body.appendChild(this.loader);
+    this.createAnimation();
+  }
+
+  LoaderAnimation.prototype.createAnimation = function () {
+    this.animationLoading.staggerFromTo(this.circles, 0.3, {
+      y: 0,
+      autoAlpha: 0
+    }, {
+      y: 20,
+      autoAlpha: 1,
+      ease: gsap_1.Back.easeOut
+    }, 0.05).fromTo(this.loader, 0.3, {
+      autoAlpha: 1,
+      scale: 1.3
+    }, {
+      autoAlpha: 0,
+      scale: 1,
+      ease: gsap_1.Power0.easeNone
+    }, 0.9);
+    this.animationDone.set(this.circles, {
+      autoAlpha: 1,
+      backgroundColor: "0x993300"
+    }).to(this.loader, 0.3, {
+      autoAlpha: 1,
+      scale: 1.3
+    }).to(this.loader, 0.3, {
+      y: -150,
+      autoAlpha: 0,
+      ease: gsap_1.Back.easeOut
+    }, "+=0.3").set(this.circles, {
+      backgroundColor: 0xffffff
+    }).set(this.loader, {
+      y: 0
+    });
+  };
+
+  LoaderAnimation.prototype.completeLoading = function () {
+    //console.log(this);
+    this.animationDone.restart();
+  };
+
+  LoaderAnimation.prototype.play = function () {
+    this.animationLoading.pause(); // this.loader.style.position = "absolute";
+    // this.loader.style.transform = "translate(-50%,50%)";
+    // this.loader.style.top = "90%";
+    // this.loader.style.left = "50%";
+
+    this.animationLoading.restart();
+  };
+
+  LoaderAnimation.prototype.getTimeLines = function () {
+    return {
+      loading: this.animationLoading,
+      done: this.animationDone
+    };
+  };
+
+  return LoaderAnimation;
+}();
+
+exports.default = LoaderAnimation;
+},{"gsap":"../../node_modules/gsap/index.js"}],"index.ts":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -53216,6 +53318,8 @@ Object.defineProperty(exports, "__esModule", {
 var pixi_js_1 = require("pixi.js");
 
 var gsap_1 = require("gsap");
+
+var LoaderAnimation_1 = __importDefault(require("./LoaderAnimation"));
 
 var app = new pixi_js_1.Application({
   antialias: true,
@@ -53258,30 +53362,101 @@ var rectangle = gsap_1.TweenMax.to(g, 5, {
   repeat: -1,
   yoyo: true
 }); //https://ihatetomatoes.net/module-1/g101-timelinemax-vs-timelinelite-p2-0716/
+// const dot = document.querySelectorAll(".dot");
+// const loader = document.querySelector("#loader");
+// const tlLoader = new TimelineMax({ paused: true, repeat: 2,onComplete: onComplete });
+// tlLoader
+//   .staggerFromTo(
+//     dot,
+//     0.3,
+//     { y: 0, autoAlpha: 0 },
+//     { y: 20, autoAlpha: 1, ease: Back.easeOut },
+//     0.05
+//   )
+//   .fromTo(
+//     loader!,
+//     0.3,
+//     { autoAlpha: 1, scale: 1.3 },
+//     { autoAlpha: 0, scale: 1, ease: Power0.easeNone },
+//     0.9
+//   );
+// tlLoader.restart();
+// function onComplete(){
+//   const tl = new TimelineLite();
+//   tl.set(dot,{autoAlpha:1,backgroundColor:"0x993300"})
+//   .to(loader!,0.3,{autoAlpha:1,scale:1.3})
+//   .to(loader!,0.3,{y:-150,autoAlpha:0,ease:Back.easeIn},"+=0.3")
+// }
 
-var dot = document.querySelectorAll(".dot");
-var loader = document.querySelector("#loader");
-var tlLoader = new gsap_1.TimelineMax({
-  paused: true,
-  repeat: -1
+var loaderAnimation = new LoaderAnimation_1.default(7);
+loaderAnimation.play();
+setTimeout(function () {
+  loaderAnimation.play();
+}, 5000);
+var tls = loaderAnimation.getTimeLines();
+console.log(tls.loading.duration());
+console.log(tls.done.duration());
+var boxCSS = document.querySelector("#css-box"); //const tweenBoxCSS = TweenMax.to(boxCSS!,3,{x:"200%",y:"200%",ease:Power2.easeInOut})
+
+var boxSVG = document.querySelector("#svg-box"); //const tweenBocSVG = TweenMax.to(boxSVG!,1,{x:"100%",y:"100%",ease:Power2.easeInOut})
+
+var circleSVG = document.querySelector("#svg-circle"); //const tweenCircleSVG = TweenMax.to(circleSVG!,1,{attr:{cx:0,cy:0}})
+
+var tl = new gsap_1.TimelineMax();
+tl.to(boxCSS, 2, {
+  left: "50%",
+  top: "50%",
+  ease: gsap_1.Power2.easeInOut
+}).to(boxSVG, 2, {
+  left: "30%",
+  top: "50%",
+  ease: gsap_1.Power2.easeInOut
+}).to(boxCSS, 2, {
+  x: "100%",
+  ease: gsap_1.Power2.easeInOut
+}).to(boxSVG, 2, {
+  xPercent: -100,
+  ease: gsap_1.Power2.easeInOut
+}).to(circleSVG, 2, {
+  attr: {
+    cx: 10,
+    cy: 10
+  },
+  ease: gsap_1.Power2.easeInOut
+}).to(boxSVG, 2, {
+  rotation: 90,
+  transformOrigin: "100% 100%",
+  ease: gsap_1.Bounce.easeOut
+}).to([boxCSS, boxSVG], 2, {
+  rotation: 720,
+  transformOrigin: "50% 50%",
+  ease: gsap_1.Power2.easeInOut
+}).to(boxCSS, 0.7, {
+  rotationX: -180,
+  transformOrigin: "0% 50%",
+  ease: gsap_1.Power2.easeInOut
+}); //https://www.youtube.com/watch?v=J5twQLXJ-vQ
+//x vs xPercent
+//left ,top, bottom ,right => container dimensions
+//xPercent, yPercent => element dimensions
+
+var box1 = document.querySelector("#box1");
+var box2 = document.querySelector("#box2");
+var box3 = document.querySelector("#box3");
+gsap_1.TweenMax.to(box1, 2, {
+  x: 100,
+  ease: gsap_1.Power2.easeOut
 });
-tlLoader.staggerFromTo(dot, 0.3, {
-  y: 0,
-  autoAlpha: 0
-}, {
-  y: 20,
-  autoAlpha: 1,
-  ease: gsap_1.Back.easeOut
-}, 0.05).fromTo(loader, 0.3, {
-  autoAlpha: 1,
-  scale: 1.3
-}, {
-  autoAlpha: 0,
-  scale: 1,
-  ease: gsap_1.Power0.easeNone
-}, 0.9);
-tlLoader.restart();
-},{"pixi.js":"../../node_modules/pixi.js/lib/index.js","gsap":"../../node_modules/gsap/index.js"}],"../../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+gsap_1.TweenMax.to(box2, 2, {
+  x: "100%",
+  ease: gsap_1.Power2.easeOut
+});
+gsap_1.TweenMax.to(box3, 2, {
+  xPercent: "50%",
+  ease: gsap_1.Power2.easeOut,
+  force3D: true
+});
+},{"pixi.js":"../../node_modules/pixi.js/lib/index.js","gsap":"../../node_modules/gsap/index.js","./LoaderAnimation":"LoaderAnimation.ts"}],"../../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -53309,7 +53484,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42701" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38795" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
