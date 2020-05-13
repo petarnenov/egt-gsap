@@ -11028,6 +11028,7 @@ var message = document.querySelector("#message"); //TweenMax.to(title!,2,{opacit
 // TweenMax.from(logo!,2,{opacity:0,scale:0})
 
 var tl = new gsap_1.TimelineMax();
+tl.timeScale(0.5);
 tl.add("begin");
 tl.from(logo, 3, {
   scale: 0,
@@ -11040,6 +11041,13 @@ tl.from(logo, 3, {
   opacity: 0,
   scale: 2
 });
+var text = document.querySelectorAll("p");
+gsap_1.TweenMax.staggerFrom(text, 0.4, {
+  ease: gsap_1.Back.easeOut,
+  opacity: 0,
+  scale: 0,
+  y: 80
+}, 0.1);
 },{"gsap":"../../node_modules/gsap/index.js"}],"../../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
