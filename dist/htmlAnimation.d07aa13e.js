@@ -11012,142 +11012,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../../node_modules/gsap/EasePack.js"}],"index.ts":[function(require,module,exports) {
+},{"./TweenLite.js":"../../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../../node_modules/gsap/EasePack.js"}],"htmlAnimation.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
-});
+}); //https://www.youtube.com/watch?v=v9GK4Rf6w3A
 
-var gsap_1 = require("gsap"); //SVG and GreenSock for Complex Animation - Forward 4 Web Summit
-//https://www.youtube.com/watch?v=ZNukcHhpSXg
+var gsap_1 = require("gsap");
 
+var title = document.querySelector("#title");
+var logo = document.querySelector(".logo");
+var message = document.querySelector("#message"); //TweenMax.to(title!,2,{opacity:0})
+// TweenMax.from(title!,5,{opacity:0})
+// TweenMax.from(logo!,2,{opacity:0,scale:0})
 
-var boxes = document.querySelectorAll(".tween");
-
-function revolve() {
-  var tl = new gsap_1.TimelineMax();
-  tl.add("begin");
-  tl.to(boxes, 4, {
-    transformOrigin: "50% 50%",
-    rotation: 720,
-    left: "100%",
-    xPercent: -100,
-    ease: gsap_1.Linear.easeNone
-  }, "begin");
-  return tl;
-} //set repeats and yoyo effect
-
-
-var repeat = new gsap_1.TimelineMax({
-  repeat: -1,
-  yoyo: true
-});
-repeat.add(revolve()); //https://greensock.com/position-parameter
-
-var c1 = document.querySelector(".position1");
-var c2 = document.querySelector(".position2");
-var c3 = document.querySelector(".position3");
-var resumeBtn = document.querySelector("#btn-resume");
-var stopBtn = document.querySelector("#btn-stop");
-var line = document.querySelector("#line");
-var pathMaster = document.querySelector("#pathMaster");
-var pathModify = document.querySelector("#pathModify");
-var tlPosition = new gsap_1.TimelineMax({
-  repeat: -1,
-  yoyo: true
-});
-tlPosition //second start at 0.7 second after beginning
-.add("second", 0.7).to(c1, 1, {
-  x: 200,
-  ease: gsap_1.Power0.easeNone
-}, "first").to(c2, 1, {
-  x: 200,
-  ease: gsap_1.Power0.easeNone
-}, "second") //relative to previous with "<" didn't work in v2
-.to(c3, 1, {
-  x: 200,
-  ease: gsap_1.Power0.easeNone,
-  opacity: 0.3
-}, "second+=0.3");
-stopBtn === null || stopBtn === void 0 ? void 0 : stopBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  tlPosition.pause();
-});
-resumeBtn === null || resumeBtn === void 0 ? void 0 : resumeBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  tlPosition.play();
-});
-var points = [100, 350, 200, 100, 300, 350, 400, 150, 500, 350, 600, 200, 700, 350]; //line?.setAttribute("points", points.join());
-
-pathMaster === null || pathMaster === void 0 ? void 0 : pathMaster.setAttribute("d", "M " + points.join(" "));
-pathModify === null || pathModify === void 0 ? void 0 : pathModify.setAttribute("d", solve(points, 3)); //https://www.youtube.com/watch?v=ZNukcHhpSXg 34:21
-
-function solve(data, curveDisplacement) {
-  if (curveDisplacement === void 0) {
-    curveDisplacement = 6;
-  }
-
-  curveDisplacement = curveDisplacement ^ 0;
-  if (!curveDisplacement) curveDisplacement = 1;
-  var size = data.length;
-  var last = size - 4;
-  var path = "M" + [data[0], data[1]];
-
-  for (var i = 0; i < size - 2; i += 2) {
-    var x0 = i ? data[i - 2] : data[0];
-    var y0 = i ? data[i - 1] : data[1];
-    var x1 = data[i + 0];
-    var y1 = data[i + 1];
-    var x2 = data[i + 2];
-    var y2 = data[i + 3];
-    var x3 = i !== last ? data[i + 4] : x2;
-    var y3 = i !== last ? data[i + 5] : y2;
-    var ep1x = (-x0 + curveDisplacement * x1 + x2) / curveDisplacement;
-    var ep1y = (-y0 + curveDisplacement * y1 + y2) / curveDisplacement;
-    var ep2x = (x1 + curveDisplacement * x2 - x3) / curveDisplacement;
-    var ep2y = (y1 + curveDisplacement * y2 - y3) / curveDisplacement;
-    path += "C" + [ep1x, ep1y, ep2x, ep2y, x2, y2];
-  }
-
-  return path;
-} //https://greensock.com/docs/v2/Plugins/BezierPlugin
-
-
-var ball = document.querySelector(".ball");
-var bezierPoints = createBezierPoint(points); //console.log(bezierPoints);
-
-var tl = new gsap_1.TimelineMax({
-  repeat: -1,
-  yoyo: true
-});
-tl.set(ball, {
-  x: 70,
-  y: 390,
-  opacity: 0.5
-}).to(ball, 10, {
-  bezier: {
-    type: "thru",
-    curviness: 1.9,
-    values: bezierPoints
-  },
+var tl = new gsap_1.TimelineMax();
+tl.add("begin");
+tl.from(logo, 3, {
+  scale: 0,
+  opacity: 0,
+  ease: gsap_1.Back.easeOut
+}, "begin +=0.05").from(title, 2, {
+  opacity: 0,
   ease: gsap_1.Linear.easeNone
+}, "begin").from(message, 2, {
+  opacity: 0,
+  scale: 2
 });
-
-function createBezierPoint(data) {
-  var bezierPoints = [];
-  var size = data.length;
-
-  for (var i = 0; i < size; i += 2) {
-    var point = {
-      x: data[i],
-      y: data[i + 1]
-    };
-    bezierPoints.push(point);
-  }
-
-  return bezierPoints;
-}
 },{"gsap":"../../node_modules/gsap/index.js"}],"../../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -11352,5 +11244,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../node_modules/parcel/src/builtins/hmr-runtime.js","index.ts"], null)
-//# sourceMappingURL=/gsapYouTubeTuts.77de5100.js.map
+},{}]},{},["../../node_modules/parcel/src/builtins/hmr-runtime.js","htmlAnimation.ts"], null)
+//# sourceMappingURL=/htmlAnimation.d07aa13e.js.map

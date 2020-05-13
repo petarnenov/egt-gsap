@@ -29,17 +29,33 @@
   margin-left: auto;
 }
 
-.svg{
-    background: khaki;
-    border:2px solid brown;
+.svg {
+  background: khaki;
+  border: 2px solid brown;
 }
 
-.ball{
-    position: relative;
-    border-radius: 100%;
-    background: coral;           
+.ball {
+  position: relative;
+  border-radius: 100%;
+  background: coral;
 }
 
+h1,
+h2 {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.logo {
+  display: block;
+  width: 40vw;
+}
 
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
